@@ -86,3 +86,32 @@ body{
     border-radius: 5px;
     font-style: oblique;
 }
+
+::selection{
+    background-color: rgb(43, 226, 195);
+    color:black;
+}
+
+::-moz-selection{
+    background-color: rgb(43, 226, 195);
+    color:black;
+}
+
+li[name="senderName"]{
+    margin-bottom: 7px;
+    color: rgb(0, 101, 114);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+li[name="messageContents"]{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(18, 99, 52);
+}
+
+li[name="senderTime"]{
+    float: right;
+    font-size: 10px;
+    font-family: sans-serif;
+    color: rgb(75, 75, 75);
+}
