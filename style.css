@@ -1,0 +1,88 @@
+*{
+    top: 0;
+    left: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(rgb(195, 226, 255),rgb(103, 126, 156));
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85vh;
+    height: 90vh;
+    margin: auto;
+    background-color: rgba(60, 199, 134, 0.562);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.messageHeader{
+    width: 100%;
+    background-color: rgb(33, 136, 67);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgba(209, 209, 209, 0.808);
+    font-style: oblique;
+}
+
+.messages{
+    background-color: rgba(110, 141, 131, 0.548);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.message{
+    list-style: none;
+    max-width: 80%;
+    align-self: self-start;
+    word-wrap: break-word;
+    background: linear-gradient(rgb(133, 255, 188),rgb(200, 255, 195));
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.message.myMessage{
+    align-self: self-end;
+}
+
+.messageInput{
+    background-color: rgba(189, 185, 185, 0.589);
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+#messageInput{
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: solid 1px darkblue;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#submitButton{
+    width: 8.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: greenyellow;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-style: oblique;
+}
