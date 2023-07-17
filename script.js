@@ -26,16 +26,28 @@ function messageStarter() {
         document.getElementById("starter").style.display="none";
         database.ref("messages").on("child_added", (snapshot)=>{
             if (snapshot.val().senderName == senderName) {
+                var unix = snapshot.val().senderTime;
+                var zaman = new Date(unix * 1000);
+                var saat = zaman.getHours();
+                var dakika = zaman.getMinutes();
+                var yazilanZaman = saat + "." + dakika;
                 html += "<ul class='message myMessage'>";
                 html += "<li name='messageContents'>"+ snapshot.val().messageContents +"</li>";
-                html += "<li name='senderTime'>"+ snapshot.val().senderTime +"</li>";
+                html += "<li name='senderTime'>"+ yazilanZaman +"</li>";
                 html += "</ul>";
+                unix = "";
             }else{
+                var unix = snapshot.val().senderTime;
+                var zaman = new Date(unix * 1000);
+                var saat = zaman.getHours();
+                var dakika = zaman.getMinutes();
+                var yazilanZaman = saat + "." + dakika;
                 html += "<ul class='message'>";
                 html += "<li name='senderName'>"+ snapshot.val().senderName +"</li>";
                 html += "<li name='messageContents'>"+ snapshot.val().messageContents +"</li>";
-                html += "<li name='senderTime'>"+ snapshot.val().senderTime +"</li>";
+                html += "<li name='senderTime'>"+ yazilanZaman +"</li>";
                 html += "</ul>";
+                unix = "";
             }
             message_box.innerHTML+=html;
             html="";
