@@ -1,41 +1,41 @@
+<!-- Not: Firebase hizmetinin 8.10.0 sürümünü kullanmamın nedeni en yeni sürümde javascript dosyasındaki "firebase" ifadesini kullanamamam oldu. Bu proje 16.07.2023 tarihinde tamamlanmıştır. Olduğunuz tarihte çalışmıyorsa daha güncel bir sürüm ile gerekli ayarlamaları yapıp çalıştırmayı deneyebilirsiniz. -->
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesajlaşma Uygulaması</title>
+    <!-- Kendi CSS dosya bağlantımız -->
     <link rel="stylesheet" href="style.css">
+    <!-- Firebase servisini kullanmak için gerekli temel bağlantı -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase realtime database (gerçek zamanlı veritabanı)nı kullanmak için gerekli bağlantı -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 </head>
 <body>
+    <!-- Mesajlaşma alanınmızın dış sınırları -->
     <div class="container">
+        <!-- Mesajlaşma alanının başlığı -->
         <div class="messageHeader">
             <h1>JavaScript ile Mesajlaşma Uygulaması</h1>
         </div>
-        <div class="messages">
-            <ul class="message">
-                <li name="senderName">Gönderen İsmi</li>
-                <li name="messageContents">Mesaj içeriği</li>
-                <li name="senderTime">12:03</li>
-            </ul>
-            <ul class="message myMessage">
-                <li name="messageContents">Mesaj içeriği</li>
-                <li name="senderTime">12:03</li>
-            </ul>
-            <ul class="message">
-                <li name="senderName">Gönderen İsmi</li>
-                <li name="messageContents">Mesaj içeriği</li>
-                <li name="senderTime">12:03</li>
-            </ul>
-            <ul class="message myMessage">
-                <li name="messageContents">Mesaj içeriği</li>
-                <li name="senderTime">12:03</li>
-            </ul>
+        <!-- Sayfamız ilk çalıştığında kullanıcıdan mesajlaşmaya başlamak için istenen isim kısmı -->
+        <div class="messages" id="messageBox">
+            <div id="starter">
+                <div id="starter-input">
+                    <h1>Başlamak için lütfen bir kullanıcı adı giriniz</h1>
+                    <input type="text" name="senderName" id="senderName"><br>
+                    <input type="submit" value="Giriş Yap" name="submit" onclick="messageStarter()">
+                </div>
+            </div>
         </div>
+        <!-- Başlangıçta gizli olan ama kullanıcı adı girildikten sonra gözüken mesaj yazma ve gönderme alanı -->
         <div class="messageInput">
             <input type="text" id="messageInput">
-            <button id="submitButton">Gönder</button>
+            <button id="submitButton" onclick="messageSend()">Gönder</button>
         </div>
     </div>
+    <!-- Kendi JavaScript dosyamızın bağlantısı -->
     <script src="script.js"></script>
 </body>
 </html>
